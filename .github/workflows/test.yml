@@ -18,6 +18,10 @@ jobs:
 
       - name: sfdc_auth_details
         run: |
+          access_token="${{ steps.sfdc_auth.outputs.access_token }}"
+          error="${{ steps.sfdc_auth.outputs.error }}"
+          error_description="${{ steps.sfdc_auth.outputs.error_description }}"
+    
           # Validating access_token if null then terminate the process
           if [[ -z ${{ steps.sfdc_auth.outputs.access_token }} ]] || [[ ${{ steps.sfdc_auth.outputs.access_token }} == "null" ]];
           then 
