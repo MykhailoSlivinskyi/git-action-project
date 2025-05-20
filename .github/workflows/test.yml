@@ -1,7 +1,6 @@
-name: Salesforce Auth Example
-
-on:
-  workflow_dispatch:
+# SFDC Authentication + using outputs within next step of the same job + error handling
+name: SFDC Authentication using details
+on: [push]
 
 jobs:
   sfdc-auth:
